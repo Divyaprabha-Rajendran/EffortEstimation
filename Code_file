@@ -1,0 +1,148 @@
+data = pd.read_excel("C:\\Users\\dia5cob\\Desktop\\EE\\Data\\Estimation\\EstimatiomSRScdd.xlsx")
+data_required=data[['ObjType','VerifCritSW','Priority','StoryPoints','Estimate','TimeSpent','Links','Parentpriority']]
+
+#ASIL_list=check_data(list(data_required['ASIL']),"DEF")
+ObjType_list=check_data(list(data_required['ObjType']),"default")
+VerifCritSW_list=check_data(list(data_required['VerifCritSW']),"default")
+Priority_list=check_priority(list(data_required['Priority']),"default",list(data_required['Parentpriority']))
+Estimate_list=convert_to_hours(list(data_required['Estimate']))
+TimeSpent_list=convert_to_hours(list(data_required['TimeSpent']))
+StoryPoints_list=check_story_pts(list(data_required['StoryPoints']),TimeSpent_list,8.5)
+Links_list=check_data(list(data_required['Links']),0)
+
+
+
+categorical_cols=["ObjType","VerifCritSW","Priority"]
+Numerical_cols=["StoryPoints","Estimate","TimeSpent","Links"]
+
+data = pd.read_excel("C:\\Users\\dia5cob\\Desktop\\EE\\Data\\Estimation\\EstimatiomSRScdd.xlsx")
+
+chi.chi_square_test(data,categorical_cols)
+
+
+#print (All_data_list)
+print (type(All_data_list[0][0]))
+print (type(All_data_list[6][0]))
+
+
+print (Categorical_list)
+print (Numerical_list)
+
+
+def Generate_univariate_Numerical_graph(Attributes_list,Numerical_list):
+    #for i in range(0,len(Numerical_list)):
+    dv.Univariate_numerical_plot("StoryPoints",Numerical_list[0],1)
+    dv.Univariate_numerical_plot("Estimate", Numerical_list[1],2)
+    dv.Univariate_numerical_plot("TimeSpent", Numerical_list[2],3)
+    dv.Univariate_numerical_plot("Links", Numerical_list[3],4)
+
+
+
+
+norm.plot_normality(story_points)
+norm.plot_normality(timespent)
+
+
+#umerical_list=[dp.StoryPoints_list,dp.Estimate_list,dp.TimeSpent_list,dp.Links_list]
+#Categorical_list=[dp.ObjType_list,dp.VerifCritSW_list,dp.Priority_list]
+
+#for i in range(0,len(Numerical_list)-1):
+#    print (ppm.Pearson_product(Numerical_list[i],Numerical_list[i+1]))
+
+
+#for i in range(0,len(Categorical_list)-1):
+#     print (chi.Chi_Square_Test(Categorical_list[i],Categorical_list[i+1]))
+
+
+#print (Numerical_list)
+
+plt.scatter(story_points,timespent, label= "stars", color= "green",
+            marker= "*", s=30)
+plt.xlabel('storypoints')
+plt.ylabel('timespent')
+plt.show()
+
+print ("inside if")
+            print (column_name)
+            print (project_data[column_name].dtype)
+
+
+
+def Categorical_correlation(Categorical_list):
+    anova_list=[]
+    for i in range(0,len(Categorical_list)):
+        for j in range(0,len(Categorical_list)):
+            anova_list.append(ppm.Pearson_product(Categorical_list[i],Categorical_list[j]))
+    return  Pearson_list
+
+story_points=[]
+timespent=[]
+
+# noinspection PyInterpreter
+for x in range(70):
+  story_points.append(random.randint(1,9))
+
+for x in range(70):
+  timespent.append(random.randint(1,50))
+
+
+cols = ['storypoints','timespent']
+
+data = pd.read_excel('C:\\Users\\dia5cob\\Desktop\\EE\\Data\\P00143\\Estimatiom_P00143SRS_PRJCddSRS_rbt_InpTempChp.xlsx',name=cols)
+
+print (story_points)
+print (timespent)
+
+
+#print ("*****************************************************")
+    #print (grouped_list.get("R"))
+    #print (grouped_list.get("default"))
+    #print (grouped_list.get("NF"))
+    #print (grouped_list.get("Ds"))
+    #print (grouped_list.get("I"))
+    #print (grouped_list.get("P"))
+
+
+ def get_exec_string(value_array_list):
+    exec_string=""
+    for i in range(0,len(value_array_list)):
+        exec_string=exec_string+"value_array_list["+str(i)+"],"
+    print (exec_string)
+    return (exec_string)
+
+
+  def get_parameters(value_list):
+    #print (value_list)
+    if len(value_list)==1:
+        return (value_list[0])
+    else:
+        #print (value_list)
+        return (value_list.pop()),(get_parameters(value_list))
+
+
+print (Anova_ststistic)
+#print (Pearson_list)
+#for each in Pearson_list:
+#    print (each)
+
+
+#print (Pearson_statistic)
+#print (Anova_ststistic)
+#print (Chi_square_statistic)
+
+#cm.Draw_matrix_Numeric(Pearson_statistic,"Pearson",5,5)
+
+
+cm.print_results(Pearson_statistic)
+print ("********************************************************************************")
+cm.print_results(Anova_ststistic)
+print ("********************************************************************************")
+cm.print_results(Chi_square_statistic)
+print ("********************************************************************************")
+
+
+
+
+T = Text(root, height=10, width=50)
+T.pack()
+T.insert(END, "Just a text Widget\nin two lines\n")
