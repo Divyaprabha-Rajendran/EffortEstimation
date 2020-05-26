@@ -69,7 +69,7 @@ def Run_random_forest(final_matrix):
     print_values(y_test,y_pred)
 
 
-Run_random_forest("C:\\Users\\dia5cob\\Desktop\\EE\\matrix_data.xlsx")
+Run_random_forest("path/to/data/file")
 
 
 
