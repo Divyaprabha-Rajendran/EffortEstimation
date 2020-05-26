@@ -75,7 +75,7 @@ def Matrix_Execution(data_path):
     return All_data_list
 
 
-Matrix_Execution("C:\\Users\\dia5cob\\Desktop\\EE\\Data\\Estimation\\EstimatiomSRScdd.xlsx")
+Matrix_Execution("path/to/data/file")
 # Generate_univariate_graph(data_required,Attributes_list)
 #dv.Univariate_Numerical_Plot(Attributes_list,Numerical_list)
 #dv.Univariate_Categorical_Plot(data_required)
